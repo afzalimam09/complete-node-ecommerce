@@ -214,7 +214,7 @@ exports.postReset = (req, res, next) => {
           to: req.body.email,
           subject: "Reset Password!",
           html: `<p>You requested a password reset.</p>
-          <p>Click this <a href="http://localhost:3000/reset/${token}">link</a> to set a new password.</p>,
+          <p>Click this <a href="https://node-shop-afzal.herokuapp.com/reset/${token}">link</a> to set a new password.</p>,
           <p>Note: Above link is valid for only one hour.</p>`,
         });
       })
