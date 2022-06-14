@@ -1,0 +1,23 @@
+.footer {
+    text-align: center;
+    color: white;
+    background-color: #00695c;
+    padding: 3px;
+    margin-top: 26px;
+    position: sticky;
+    top: 100vh;
+    
+}
+
+.footer p {
+    font-size: 1.1rem;
+}
+
+.footer p a {
+    color: #ffeb3b;
+    text-decoration: none;
+}
+
+.footer p a:hover {
+    color: white;
+}

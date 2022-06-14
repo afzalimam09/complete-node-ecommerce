@@ -1,0 +1,28 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/users.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+        <main>
+            <% if (users.length > 0) { %>
+                <ul class="user__item-list">
+                    <% users.forEach(user => { %>
+                        <li class="user__item">
+                            <h2><span>Name: </span><%= user.name %></h1>
+                            <h2><span>Email: </span><%= user.email %></h2>
+                            <form action="/admin/delete-user" method="POST">
+                                <input type="hidden" value="<%= user._id %>" name="userId">
+                                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                                <button class="btn danger" type="submit">Delete User</button>
+                            </form>
+                        </li>
+                    <% }) %>
+                </ul>     
+            <% } else { %>
+                <h1>No Users Found!</h1>
+            <% } %>
+        </main>
+        <%- include('../includes/footer.ejs') %>
+        <%- include('../includes/end.ejs') %>
